@@ -1,4 +1,4 @@
-# accepted
+// accepted
 
 #include <iostream>
  
