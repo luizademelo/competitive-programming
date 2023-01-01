@@ -1,4 +1,3 @@
-// 1845	-- Efílogo -- Accepted
 /*
 ID: ludemel2
 TASK: test
