@@ -1,3 +1,4 @@
+// só achar o custo minimo de cada componente conexa 
 /*
 ID: ludemel2
 TASK: test
