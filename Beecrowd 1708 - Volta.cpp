@@ -1,0 +1,38 @@
+/*
+ID: ludemel2
+TASK: test
+LANG: C++
+*/
+/* LANG can be C++11 or C++14 for those more recent releases */
+#include <bits/stdc++.h>
+
+#define INF 10000000000
+#define MOD 1000000007
+
+using namespace std;
+
+typedef long long ll;
+typedef pair<int, int> ii;
+typedef vector<ii> vii;
+typedef vector<int> vi;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int x,y; cin >> x >> y; 
+    int atraso = y - x; 
+    int volta  = 1; 
+
+    int count = atraso; 
+    while(count < x)
+    {
+        count += atraso; 
+        volta++; 
+    }
+    cout << volta + 1 << endl; 
+    
+
+    return 0;
+}
