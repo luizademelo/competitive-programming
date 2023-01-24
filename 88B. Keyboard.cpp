@@ -1,4 +1,6 @@
 // ficou uma bagunça mas deu certo
+// precisei armazenar os caracteres que ja olhei em um set pra nao calcular de novo,  tava dando TLE sem isso
+// mas pode armazenar em um vetor também ao inves do set 
 /*
 ID: ludemel2
 TASK: test
