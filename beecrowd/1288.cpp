@@ -1,4 +1,5 @@
 // tem que pensar no problema da mochila (knapsack problem) 
+// pode fazer recursivo ou com dp 
 #include <bits/stdc++.h>
 #include <stdlib.h>
 
