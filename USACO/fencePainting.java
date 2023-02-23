@@ -1,4 +1,4 @@
-
+// problem link: http://www.usaco.org/index.php?page=viewproblem2&cpid=567
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
