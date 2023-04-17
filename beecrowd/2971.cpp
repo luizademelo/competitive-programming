@@ -55,6 +55,23 @@ void processa_rodada()
 			vencedor = atual+1; 
 			break;
 		}
+
+		// tratar coringa
+		
+
+		// pegar menor carta
+		int cartas = jogadores[atual].size(); 
+		if(jogadores[atual][0] != jogadores[atual][1])
+		{
+			jogadores[(atual+1)%n] += jogadores[atual][0]; 
+			jogadores[atual].erase(0,1); 
+		}else if(jogadores[atual][cartas-1] != jogadores[atual][cartas-2])
+		{
+			jogadores[(atual+1)%n] += jogadores[atual][cartas-1]; 
+			jogadores[atual].erase(cartas-1,1); 
+		}
+
+		atual++; 
 	}
 }
 
