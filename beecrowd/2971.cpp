@@ -22,24 +22,59 @@ typedef vector<ii> vii;
 typedef vector<int> vi;
 
 int n,k; 
+int vencedor = -1; 
+
 vector<string> jogadores; 
-map<char,int> mp = {
+map<char,int> cards = {
 	{'A', 1}, {'2', 2}, {'3', 3}, {'4', 4}, 
 	{'5', 5}, {'6', 6}, {'7', 7}, {'8', 8}, 
 	{'9', 9}, {'D', 10}, {'Q', 11}, {'J', 12}, {'K', 13}
 }; 
+
+bool cmp(char &c1, char &c2)
+{
+	return cards[c1] < cards[c2];
+}
+
+bool checa_vencedor(int v)
+{
+	for(int i = 1; i < jogadores[v].size(); i++)
+		if(jogadores[v][i] != jogadores[v][i-1])
+			return false; 
+	return true; 
+}
+
+void processa_rodada()
+{
+	int atual = k-1; 
+	for(int i = 0; i < n; i++)
+	{
+		sort(jogadores[atual].begin(), jogadores[atual].end(), cmp); 
+		if(checa_vencedor(atual))
+		{
+			vencedor = atual+1; 
+			break;
+		}
+	}
+}
 
 int main()
 {
     _
     
     cin >> n >> k; 
-	  jogadores.resize(n); 
-	  for(int i = 0; i < n; i++)
-		  cin >> jogadores[i];
+	jogadores.resize(n); 
+	for(int i = 0; i < n; i++)
+		cin >> jogadores[i];
 	
+	int coringa = k-1; 
+	while(vencedor < 1)
+	{
 
-	
+	}
+
+	cout << vencedor << endl; 
+
 
     return 0;
 }
