@@ -13,6 +13,8 @@
 #define s second
 #define MOD 1000000007
 #define MAXN 1005
+#define MANTER 1
+#define PASSAR 2 
 
 using namespace std;
 
@@ -23,6 +25,8 @@ typedef vector<int> vi;
 
 int n,k; 
 int vencedor = -1; 
+int coringa; 
+int state_coringa = MANTER; 
 
 vector<string> jogadores; 
 map<char,int> cards = {
@@ -31,10 +35,10 @@ map<char,int> cards = {
 	{'9', 9}, {'D', 10}, {'Q', 11}, {'J', 12}, {'K', 13}
 }; 
 
-bool cmp(char &c1, char &c2)
-{
-	return cards[c1] < cards[c2];
-}
+// bool cmp(char &c1, char &c2)
+// {
+// 	return cards[c1] < cards[c2];
+// }
 
 bool checa_vencedor(int v)
 {
@@ -44,35 +48,11 @@ bool checa_vencedor(int v)
 	return true; 
 }
 
-void processa_rodada()
+void passa_carta(int atual)
 {
-	int atual = k-1; 
-	for(int i = 0; i < n; i++)
-	{
-		sort(jogadores[atual].begin(), jogadores[atual].end(), cmp); 
-		if(checa_vencedor(atual))
-		{
-			vencedor = atual+1; 
-			break;
-		}
+    // tratar coringa
 
-		// tratar coringa
-		
-
-		// pegar menor carta
-		int cartas = jogadores[atual].size(); 
-		if(jogadores[atual][0] != jogadores[atual][1])
-		{
-			jogadores[(atual+1)%n] += jogadores[atual][0]; 
-			jogadores[atual].erase(0,1); 
-		}else if(jogadores[atual][cartas-1] != jogadores[atual][cartas-2])
-		{
-			jogadores[(atual+1)%n] += jogadores[atual][cartas-1]; 
-			jogadores[atual].erase(cartas-1,1); 
-		}
-
-		atual++; 
-	}
+    // achando a carta que deve ser passada
 }
 
 int main()
@@ -84,13 +64,22 @@ int main()
 	for(int i = 0; i < n; i++)
 		cin >> jogadores[i];
 	
-	int coringa = k-1; 
+	int atual = coringa = k-1; 
+    
 	while(vencedor < 1)
 	{
-
+        for(int i = 0; i < n; i++ )
+        {
+            passa_carta(atual); 
+            atual++; 
+            if(vencedor >= 0)
+            {
+                cout << vencedor+1 << endl; 
+                break; 
+            }
+        }
 	}
 
-	cout << vencedor << endl; 
 
 
     return 0;
