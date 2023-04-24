@@ -53,6 +53,15 @@ void passa_carta(int atual)
     // tratar coringa
 
     // achando a carta que deve ser passada
+    int menor = INF; 
+    char carta; 
+    for(int i = 0; i < jogadores[atual].size(); i++)
+    {
+        int cnt = count(jogadores[atual].begin(), jogadores[atual].end(), jogadores[atual][i]); 
+        if(cnt == menor and cards[carta] < cards[jogadores[atual][i]])
+            carta = jogadores[atual][i]; 
+        
+    }
 }
 
 int main()
