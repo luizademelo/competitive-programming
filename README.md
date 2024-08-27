@@ -73,3 +73,4 @@
 - [x] [3089](https://www.beecrowd.com.br/repository/UOJ_3089.html) - [Solution](https://github.com/luizademelo/competitive-programming/blob/master/beecrowd/3089.cpp)
 - [x] [3129](https://www.beecrowd.com.br/repository/UOJ_3129.html) - [Solution](https://github.com/luizademelo/competitive-programming/blob/master/beecrowd/3129.cpp)
 - [x] [3224](https://www.beecrowd.com.br/repository/UOJ_3224.html) - [Solution](https://github.com/luizademelo/competitive-programming/blob/master/beecrowd/3224.cpp)
+- [x] [3484](https://www.beecrowd.com.br/repository/UOJ_3484.html) - [Solution](https://github.com/luizademelo/competitive-programming/blob/master/beecrowd/3484.cpp)
